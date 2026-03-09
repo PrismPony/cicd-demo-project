@@ -1,0 +1,9 @@
+{
+  "name": "cicd-demo-project",
+  "version": "1.0.0",
+  "description": "Demo project for Beta Release",
+  "scripts": {
+    "test": "node test.js",
+    "test:fail": "node fail.js"
+  }
+}
