@@ -1,0 +1,16 @@
+pipeline:
+  name: demo-invalid-pipeline
+stages:
+  - build
+job-a:
+  - stage: build
+  - image: alpine
+  - script:
+    - echo "Job A"
+  - needs: [job-b]
+job-b:
+  - stage: build
+  - image: alpine
+  - script:
+    - echo "Job B"
+  - needs: [job-a]
