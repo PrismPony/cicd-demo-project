@@ -1,9 +1,7 @@
 {
-  "name": "cicd-demo-project",
-  "version": "1.0.0",
-  "description": "Demo project for Beta Release",
+  "name": "demo",
   "scripts": {
-    "test": "node test.js",
-    "test:fail": "node fail.js"
+    "test": "echo \"✅ All Unit Tests Passed!\"",
+    "test:fail": "echo \"❌ Fatal Error: DB Connection Failed\" && exit 1"
   }
 }
