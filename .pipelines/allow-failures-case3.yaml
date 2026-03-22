@@ -5,11 +5,13 @@ stages:
 job-a:
   - stage: test
   - image: alpine
-  - script: exit 1
   - failures: true
+  - script:
+    - exit 1
 job-b:
   - stage: test
   - image: alpine
-  - script: exit 1
   - needs: [job-a]
   - failures: true
+  - script:
+    - exit 1

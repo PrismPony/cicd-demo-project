@@ -5,11 +5,13 @@ stages:
 job-a:
   - stage: build
   - image: alpine
-  - script: exit 1
   - failures: false
+  - script:
+    - exit 1
 job-b:
   - stage: build
   - image: alpine
-  - script: echo "This should never run because job-a failed and is required."
   - needs: [job-a]
   - failures: true
+  - script:
+    - echo "This should never run because job-a failed and is required."

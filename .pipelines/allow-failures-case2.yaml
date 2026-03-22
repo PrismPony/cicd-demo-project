@@ -5,11 +5,13 @@ stages:
 job-a:
   - stage: build
   - image: alpine
-  - script: exit 1
   - failures: true
+  - script:
+    - exit 1
 job-b:
   - stage: build
   - image: alpine
-  - script: echo "This runs successfully despite job-a failing."
   - needs: [job-a]
   - failures: false
+  - script:
+    - echo "This runs successfully despite job-a failing."
