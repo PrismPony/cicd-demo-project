@@ -4,13 +4,13 @@ stages:
   - test
 job-a:
   - stage: test
-  - image: alpine
+  - image: alpine:latest
   - failures: true
   - script:
     - exit 1
 job-b:
   - stage: test
-  - image: alpine
+  - image: alpine:latest
   - needs: [job-a]
   - failures: true
   - script:
