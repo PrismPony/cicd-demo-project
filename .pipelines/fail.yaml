@@ -1,9 +1,11 @@
 pipeline:
   name: demo-fail-pipeline
+
 stages:
   - test
+
 run-failing-tests:
   - stage: test
   - image: node:18-alpine
   - script:
-    - npm run test:fail
+      - npm run test:fail
