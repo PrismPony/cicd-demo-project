@@ -1,9 +1,10 @@
 pipeline:
   name: demo-success-pipeline
-stages:
-  - test
-run-tests:
-  - stage: test
-  - image: node:18-alpine
-  - script:
-    - npm run test
+  stages:
+    - test
+  jobs:  
+    - name: run-tests
+      stage: test
+      image: node:18-alpine
+      script:
+        - npm run test
